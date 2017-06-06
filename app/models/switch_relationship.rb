@@ -1,0 +1,2 @@
+class SwitchRelationship < ApplicationRecord
+end
