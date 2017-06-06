@@ -10,36 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606134035) do
-
-  create_table "keys", force: :cascade do |t|
-    t.boolean  "key1",            default: false
-    t.boolean  "key2",            default: false
-    t.boolean  "key3",            default: false
-    t.string   "key1name"
-    t.string   "key2name"
-    t.string   "key3name"
-    t.text     "key1description"
-    t.text     "key2description"
-    t.text     "key3description"
-    t.string   "scenes"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-  end
+ActiveRecord::Schema.define(version: 20170606144133) do
 
   create_table "lights", force: :cascade do |t|
-    t.string   "light_status"
-    t.integer  "key_id"
-    t.string   "name"
+    t.string   "title"
+    t.boolean  "is_on",       default: false
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "scenes", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "switches", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
