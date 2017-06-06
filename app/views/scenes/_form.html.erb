@@ -1,0 +1,4 @@
+<%= simple_form_for @scene do |f| %>
+  <%=f.input :title, label: "场景标题" %>
+  <%=f.submit "创建", data: {disable_with: "提交中..."}, class: "btn btn-info"%>
+<% end %>
