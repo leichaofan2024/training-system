@@ -1,3 +1,29 @@
 // Place all the styles related to the scenes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.light-frame{
+  width:80%;
+  height:300px;
+  margin:20px auto;
+  background-color: #E5E8BA;
+  padding-top:50px;
+}
+.light-frame-position{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.switch-frame{
+  width:80%;
+  margin:40px auto;
+  height:100px;
+  background-color:#D5C581;
+  .switch-frame-position{
+    margin-top: 20px;
+  }
+}
+.operate-scene{
+   width: 80%;
+   margin:0 auto;
+   text-align: center;
+}

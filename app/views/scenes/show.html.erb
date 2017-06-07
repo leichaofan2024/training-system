@@ -1,18 +1,29 @@
-<div class="">
+<div class="light-frame">
   <% if @lights.present? %>
     <% @lights.each do |light| %>
-      <%= render_light_status(light) %>
+      <div class="col-md-3 col-xs-4 col-sm-3 light-frame-position">
+        <%= render_light_status(light) %>
+        <%= light.title %>
+      </div>
+
     <% end %>
   <% end %>
 </div>
 
-<div class="">
+<div class="switch-frame">
   <% if @switches.present? %>
     <% @switches.each do |switch| %>
-      <%= link_to(switch.title,light_toggle_scene_switch_path(@scene,switch),method: :post) %>
+      <div class="col-md-3 col-xs-4 col-sm-3 switch-frame-position">
+
+        <%= link_to light_toggle_scene_switch_path(@scene,switch),method: :post do  %>
+          <%= content_tag(:i, "", class: "fa fa-toggle-on fa-lg") %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
 
-<%=link_to("创建开关", new_scene_switch_path(@scene))%>
-<%= link_to("创建指示灯", new_scene_light_path(@scene))%>
+<div class="operate-scene">
+  <%=link_to("创建开关", new_scene_switch_path(@scene))%>
+  <%= link_to("创建指示灯", new_scene_light_path(@scene))%>
+</div>

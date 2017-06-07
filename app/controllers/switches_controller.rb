@@ -34,6 +34,7 @@ class SwitchesController < ApplicationController
   def light_toggle
     @scene = Scene.find(params[:scene_id])
     @switch = Switch.find(params[:id])
+
     @lights = @switch.lights
     @lights.each do |light|
       if light.is_on?
@@ -44,7 +45,7 @@ class SwitchesController < ApplicationController
     end
     redirect_to :back
   end
-  
+
   private
 
   def switch_params
