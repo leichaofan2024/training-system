@@ -36,7 +36,7 @@ class Admin::LightsController < ApplicationController
      private
 
      def light_params
-       params.require(:light).permit(:title,:description,:scene_id, :switches_ids => [])
+       params.require(:light).permit(:title,:description,:scene_id, :switch_ids => [])
      end
 
      def find_light
