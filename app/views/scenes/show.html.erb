@@ -14,10 +14,10 @@
   <% if @switches.present? %>
     <% @switches.each do |switch| %>
       <div class="col-md-3 col-xs-4 col-sm-3 switch-frame-position">
-
         <%= link_to light_toggle_scene_switch_path(@scene,switch),method: :post do  %>
-          <%= content_tag(:i, "", class: "fa fa-toggle-on fa-lg") %>
+          <%= render_switch_status(switch) %>
         <% end %>
+        <%= switch.title %>
       </div>
     <% end %>
   <% end %>

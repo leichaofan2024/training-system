@@ -34,7 +34,11 @@ class SwitchesController < ApplicationController
   def light_toggle
     @scene = Scene.find(params[:scene_id])
     @switch = Switch.find(params[:id])
-
+    if @switch.is_on?
+      @switch.update(:is_on => false)
+    else
+      @switch.update(:is_on => true)
+    end
     @lights = @switch.lights
     @lights.each do |light|
       if light.is_on?
@@ -49,7 +53,7 @@ class SwitchesController < ApplicationController
   private
 
   def switch_params
-    params.require(:switch).permit(:title,:description,:scene_id)
+    params.require(:switch).permit(:title,:description,:scene_id, :is_on)
   end
 
   def find_switch
