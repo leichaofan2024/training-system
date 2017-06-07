@@ -1,8 +1,6 @@
 <h3>所有培训场景</h3>
 <div class="clearfix">
-  <div class="pull-right " >
-    <%= link_to("创建场景", new_scene_path, class:"btn btn-info")%>
-  </div>
+
 </div>
 
 <hr class="clearfix">
@@ -11,10 +9,7 @@
   <% @scenes.each do |scene| %>
   <div style= "clear:both;">
       <%= link_to(scene.title, scene_path(scene)) %>
-      <span class="pull-right">
-        <%= link_to("编辑", edit_scene_path(scene),class: "btn btn-primary") %>
-        <%= link_to("删除", scene_path(scene), class: "btn btn-danger") %>
-      </span>
+
     <% end %>
   </div>
 </div>

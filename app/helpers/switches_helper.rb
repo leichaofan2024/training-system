@@ -8,4 +8,6 @@ module SwitchesHelper
     end
   end
 
+
+
 end

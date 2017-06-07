@@ -22,3 +22,8 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="operate-scene">
+  <%=link_to("创建开关", new_admin_scene_switch_path(@scene))%>
+  <%= link_to("创建指示灯", new_admin_scene_light_path(@scene))%>
+</div>

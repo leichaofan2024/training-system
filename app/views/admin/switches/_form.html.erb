@@ -1,0 +1,5 @@
+<%= simple_form_for [:admin,@scene,@switch] do |f| %>
+  <%= f.input :title,label: "开关标题" %>
+  <%= f.input :description, label: "开关描述"%>
+  <%= f.submit "创建", data: {:disable_with => "提交中..."} %>
+<% end %>
