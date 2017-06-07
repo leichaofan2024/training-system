@@ -1,0 +1,7 @@
+<h2>创建指示灯</h2>
+<%= simple_form_for [@scene, @light] do |f| %>
+  <%= f.input :title,label: "指示灯名称" %>
+  <%= f.input :description, label: "指示灯功能描述"%>
+  <%= f.association :switches, as: :check_boxes %>
+  <%= f.submit "创建", data: {:disable_with => "提交中..."} %>
+<% end %>

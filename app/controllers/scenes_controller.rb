@@ -6,6 +6,8 @@ class ScenesController < ApplicationController
   end
 
   def show
+    @switches = @scene.switches
+    @lights = @scene.lights
   end
 
   def new
@@ -45,6 +47,6 @@ class ScenesController < ApplicationController
 
   def find_scene
     @scene = Scene.find(params[:id])
-  end 
+  end
 
 end

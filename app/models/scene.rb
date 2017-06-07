@@ -1,4 +1,4 @@
 class Scene < ApplicationRecord
-  has_many :switchs
-  has_many :lights 
+  has_many :switches
+  has_many :lights
 end

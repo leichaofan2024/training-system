@@ -1,6 +1,9 @@
 class SwitchesController < ApplicationController
    before_action :find_switch,only: [:edit,:update, :destroy]
-
+  def new
+    @scene = Scene.find(params[:scene_id])
+    @switch = Switch.new
+  end 
   def create
     @scene = Scene.find(params[:scene_id])
     @switch= Switch.new(switch_params)
@@ -24,7 +27,7 @@ class SwitchesController < ApplicationController
   end
 
   def destroy
-    @switch.destroy, alert: "你已成功删除#{@switch.title}按钮！"
+    @switch.destroy
     redirect_to scene_path(@scene)
   end
 

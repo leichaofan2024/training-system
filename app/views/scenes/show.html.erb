@@ -1,9 +1,18 @@
 <div class="">
-
+  <% if @lights.present?%>
+    <% @lights.each do |light| %>
+      <%= light.title %>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="">
-
+  <% if @switches.present? %>
+    <% @switches.each do |switch| %>
+      <%= link_to(switch.title,open_light_scene_path(switch),method: :post %>
+    <% end %>
+  <% end %>
 </div>
 
-<%=link_to%>
+<%=link_to("创建开关", new_scene_switch_path(@scene))%>
+<%= link_to("创建指示灯", new_scene_light_path(@scene))%>
