@@ -4,7 +4,7 @@ class Admin::LightsController < ApplicationController
     before_action :find_light,only: [:edit,:update, :destroy]
      def new
        @scene = Scene.find(params[:scene_id])
-       @switches = @scene.switches
+       @switches = @scene.switches.map{|u| [u.title,u.id]}
        @light = Light.new
      end
      def create
@@ -37,7 +37,7 @@ class Admin::LightsController < ApplicationController
      private
 
      def light_params
-       params.require(:light).permit(:title,:description,:scene_id, :switch_ids => [])
+       params.require(:light).permit(:title,:description,:scene_id, :switches_ids => [])
      end
 
      def find_light
