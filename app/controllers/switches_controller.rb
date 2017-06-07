@@ -3,7 +3,7 @@ class SwitchesController < ApplicationController
   def new
     @scene = Scene.find(params[:scene_id])
     @switch = Switch.new
-  end 
+  end
   def create
     @scene = Scene.find(params[:scene_id])
     @switch= Switch.new(switch_params)
@@ -31,6 +31,20 @@ class SwitchesController < ApplicationController
     redirect_to scene_path(@scene)
   end
 
+  def light_toggle
+    @scene = Scene.find(params[:scene_id])
+    @switch = Switch.find(params[:id])
+    @lights = @switch.lights
+    @lights.each do |light|
+      if light.is_on?
+      light.update(:is_on => false)
+      else
+        light.update(:is_on => true)
+      end
+    end
+    redirect_to :back
+  end
+  
   private
 
   def switch_params

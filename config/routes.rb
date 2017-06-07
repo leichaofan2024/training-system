@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :scenes do
     resources :switches do
-      member: do
+      member do
         post :light_toggle
-      end 
+      end
+    end
     resources :lights
   end
 end
