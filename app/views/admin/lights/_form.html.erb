@@ -1,6 +1,11 @@
 <%= simple_form_for [:admin,@scene, @light] do |f| %>
   <%= f.input :title,label: "指示灯名称" %>
   <%= f.input :description, label: "指示灯功能描述"%>
-  <%= f.association :switches,as: :check_boxes %>
+  <%= f.association :switches%>
   <%= f.submit "创建", data: {:disable_with => "提交中..."} %>
 <% end %>
+
+
+<script>
+  $("#light_switch_ids").select2();
+</script>
