@@ -6,12 +6,15 @@ class Admin::SwitchesController < ApplicationController
    @scene = Scene.find(params[:scene_id])
    @switch = Switch.new
  end
+
  def create
    @scene = Scene.find(params[:scene_id])
    @switch= Switch.new(switch_params)
    @switch.scene = @scene
    if @switch.save
      redirect_to admin_scene_path(@scene)
+     @trainings = @scene.trainings
+     @trainings.delete_all
    else
      render :new
    end
@@ -23,6 +26,8 @@ class Admin::SwitchesController < ApplicationController
  def update
    if @switch.update(switch_params)
      redirect_to  admin_scene_path(@scene)
+     @trainings = @scene.trainings
+     @trainings.delete_all
    else
      render :edit
    end
@@ -31,6 +36,8 @@ class Admin::SwitchesController < ApplicationController
  def destroy
    @switch.destroy
    redirect_to admin_scene_path(@scene)
+   @trainings = @scene.trainings
+   @trainings.delete_all
  end
 
  def light_toggle

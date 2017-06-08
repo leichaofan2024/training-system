@@ -14,7 +14,7 @@
   <% if @training_switches.present? %>
     <% @training_switches.each do |training_switch| %>
       <div class="col-md-3 col-xs-4 col-sm-3 switch-frame-position">
-        <%= link_to training_light_toggle_scene_training_training_switch_path(@scene,@training,training_switch),method: :post do  %>
+        <%= link_to training_light_toggle_training_switch_path(training_switch),method: :post do  %>
           <%= render_training_switch_status(training_switch) %>
         <% end %>
         <%= training_switch.switch.title %>

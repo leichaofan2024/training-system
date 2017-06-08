@@ -7,12 +7,15 @@ class Admin::LightsController < ApplicationController
        @switches = @scene.switches
        @light = Light.new
      end
+
      def create
        @scene = Scene.find(params[:scene_id])
        @light= Light.new(light_params)
        @light.scene = @scene
        if @light.save
          redirect_to admin_scene_path(@scene)
+         @trainings = @scene.trainings
+         @trainings.delete_all
        else
          render :new
        end
@@ -24,6 +27,8 @@ class Admin::LightsController < ApplicationController
      def update
        if @light.update(light_params)
          redirect_to  admin_scene_path(@scene)
+         @trainings = @scene.trainings
+         @trainings.delete_all
        else
          render :edit
        end
@@ -32,6 +37,8 @@ class Admin::LightsController < ApplicationController
      def destroy
        @light.destroy
        redirect_to admin_scene_path(@scene)
+       @trainings = @scene.trainings
+       @trainings.delete_all
      end
 
      private
