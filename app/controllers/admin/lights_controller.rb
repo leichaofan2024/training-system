@@ -4,7 +4,7 @@ class Admin::LightsController < ApplicationController
     before_action :find_light,only: [:edit,:update, :destroy]
      def new
        @scene = Scene.find(params[:scene_id])
-       @switches = @scene.switches 
+       @switches = @scene.switches
        @light = Light.new
      end
      def create
