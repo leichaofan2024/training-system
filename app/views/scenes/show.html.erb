@@ -1,9 +1,9 @@
 <div class="light-frame">
-  <% if @lights.present? %>
-    <% @lights.each do |light| %>
+  <% if @training_lights.present? %>
+    <% @training_lights.each do |training_light| %>
       <div class="col-md-3 col-xs-4 col-sm-3 light-frame-position">
-        <%= render_light_status(light) %>
-        <%= light.title %>
+        <%= render_training_light_status(training_light) %>
+        <%= training_light.light.title %>
       </div>
 
     <% end %>
@@ -11,13 +11,13 @@
 </div>
 
 <div class="switch-frame">
-  <% if @switches.present? %>
-    <% @switches.each do |switch| %>
+  <% if @training_switches.present? %>
+    <% @training_switches.each do |training_switch| %>
       <div class="col-md-3 col-xs-4 col-sm-3 switch-frame-position">
-        <%= link_to light_toggle_scene_switch_path(@scene,switch),method: :post do  %>
-          <%= render_switch_status(switch) %>
+        <%= link_to training_light_toggle_scene_switch_path(@scene,training_switch.switch),method: :post do  %>
+          <%= render_training_switch_status(training_switch) %>
         <% end %>
-        <%= switch.title %>
+        <%= training_switch.switch.title %>
       </div>
     <% end %>
   <% end %>

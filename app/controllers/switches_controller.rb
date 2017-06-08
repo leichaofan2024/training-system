@@ -1,19 +1,21 @@
 class SwitchesController < ApplicationController
 
-  def light_toggle
+  def training_light_toggle
     @scene = Scene.find(params[:scene_id])
     @switch = Switch.find(params[:id])
-    if @switch.is_on?
-      @switch.update(:is_on => false)
+    @training= Training.all.where(:scene_id => @scene.id,:user_id => current_user.id).last
+    @training_switch = @switch.training_switches.find(:training_id => @training.id)
+    if @training_switch.is_on?
+      @training_switch.update(:is_on => false)
     else
-      @switch.update(:is_on => true)
+      @training_switch.update(:is_on => true)
     end
-    @lights = @switch.lights
-    @lights.each do |light|
-      if light.is_on?
-      light.update(:is_on => false)
+    @training_lights = @training_switch.training_lights
+    @training_lights.each do |training_light|
+      if training_light.is_on?
+      training_light.update(:is_on => false)
       else
-        light.update(:is_on => true)
+        training_light.update(:is_on => true)
       end
     end
     redirect_to :back

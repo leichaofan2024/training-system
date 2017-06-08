@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607091919) do
+ActiveRecord::Schema.define(version: 20170608064035) do
 
   create_table "lights", force: :cascade do |t|
     t.string   "title"
@@ -41,6 +41,36 @@ ActiveRecord::Schema.define(version: 20170607091919) do
     t.datetime "updated_at",                  null: false
     t.integer  "scene_id"
     t.boolean  "is_on",       default: false
+  end
+
+  create_table "training_lights", force: :cascade do |t|
+    t.boolean  "is_on",       default: false
+    t.integer  "training_id"
+    t.integer  "light_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "training_switch_ships", force: :cascade do |t|
+    t.integer  "training_light_id"
+    t.integer  "training_switch_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "training_switches", force: :cascade do |t|
+    t.boolean  "is_on",       default: false
+    t.integer  "training_id"
+    t.integer  "switch_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "scene_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
