@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   end
 
   resources :scenes do
-
-    resources :switches do
-      member do
-        post :training_light_toggle
+    resources :trainings do
+      resources :training_switches do
+        member do
+          post :training_light_toggle
+        end
       end
     end
-    resources :lights
   end
+
 end
