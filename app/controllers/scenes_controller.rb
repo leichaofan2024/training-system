@@ -36,8 +36,6 @@ class ScenesController < ApplicationController
       end
       @training_switches = @training.training_switches
     end
-
-
   end
 
 
