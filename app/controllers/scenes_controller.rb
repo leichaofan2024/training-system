@@ -20,7 +20,7 @@ class ScenesController < ApplicationController
         training_light = @training.training_lights.build(light_id: light.id, training_id: @training.id, is_on: light.is_on)
         training_light.save
       end
-      @training_lights = @training.training_lights
+      @training_lights = @training.training_lights.order("id ASC")
 
 
       @switches.each do |switch|
@@ -34,7 +34,7 @@ class ScenesController < ApplicationController
 
         training_switch.save
       end
-      @training_switches = @training.training_switches
+      @training_switches = @training.training_switches.order("id ASC")
     end
   end
 
