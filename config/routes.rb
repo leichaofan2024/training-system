@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :scenes
+  resources :scenes do
+    member do
+      delete :destroy_training
+    end
+  end
 
   resources :training_switches do
     member do

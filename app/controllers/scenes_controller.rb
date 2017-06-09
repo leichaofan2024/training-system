@@ -38,5 +38,13 @@ class ScenesController < ApplicationController
     end
   end
 
+  def destroy_training
+    @scene = Scene.find(params[:id])
+    @training = @scene.trainings.find_by(user_id: current_user.id)
+    @training.destroy
+    redirect_to scene_path(@scene)
+  end
+
+
 
 end

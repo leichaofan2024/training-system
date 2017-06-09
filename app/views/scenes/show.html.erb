@@ -22,3 +22,7 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="option-frame">
+  <%= link_to("再做一遍", destroy_training_scene_path(@scene), method: :delete, :data => {:confirm => "再重做一遍吗?"}, class: "btn btn-primary btn-sm")%>
+</div>
