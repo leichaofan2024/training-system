@@ -8,8 +8,8 @@ class Admin::ScenesController < ApplicationController
   end
 
   def show
-    @switches = @scene.switches
-    @lights = @scene.lights
+    @switches = @scene.switches.order("id ASC")
+    @lights = @scene.lights.order("id ASC")
   end
 
   def new
