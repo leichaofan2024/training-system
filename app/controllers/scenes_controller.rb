@@ -6,12 +6,12 @@ class ScenesController < ApplicationController
 
   def show
     @scene = Scene.find(params[:id])
-    @switches = @scene.switches
-    @lights = @scene.lights
-    @training = Training.all.where(scene_id: @scene.id, user_id: current_user.id).last
+    @switches = @scene.switches.order("id ASC")
+    @lights = @scene.lights.order("id ASC")
+    @training = Training.all.order("id ASC").where(scene_id: @scene.id, user_id: current_user.id).last
     if @training.present?
-      @training_lights = @training.training_lights
-      @training_switches = @training.training_switches
+      @training_lights = @training.training_lights.order("id ASC")
+      @training_switches = @training.training_switches.order("id ASC")
     else
 
       @training = Training.create(scene_id: @scene.id, user_id: current_user.id)
