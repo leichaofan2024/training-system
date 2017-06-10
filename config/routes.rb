@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :scenes do
     member do
+      get :operation_manual
       delete :destroy_training
     end
   end

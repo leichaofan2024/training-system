@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
   <head>
     <title>TrainingSystem</title>
     <%= csrf_meta_tags %>
@@ -8,13 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="min-height:100%;">
-    <div class="container-fluid" style="margin-bottom:100px">
+  <body>
+    <div class="application-frame">
       <%= render "common/navbar" %>
 
       <%= render "common/flashes" %>
       <%= yield %>
-   </div>
+    </div>
      <%= render "common/footer" %>
+
   </body>
 </html>

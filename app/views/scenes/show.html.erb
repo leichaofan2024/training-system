@@ -25,4 +25,8 @@
 
 <div class="option-frame">
   <%= link_to("再做一遍", destroy_training_scene_path(@scene), method: :delete, :data => {:confirm => "再重做一遍吗?"}, class: "btn btn-primary btn-sm")%>
+
+  <span class="operation-manual-button">
+    <%= link_to("操作手册", operation_manual_scene_path(@scene), class: "btn btn-primary btn-sm pull-right")%>
+  </span>
 </div>

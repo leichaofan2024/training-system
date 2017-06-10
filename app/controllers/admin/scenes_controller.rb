@@ -30,7 +30,7 @@ class Admin::ScenesController < ApplicationController
 
   def update
     if @scene.update(scene_params)
-      redirect_to scenes_path
+      redirect_to admin_scenes_path
     else
       render :edit
     end

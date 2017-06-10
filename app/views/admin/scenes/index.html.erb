@@ -9,12 +9,12 @@
 
 <div class="scene-index" style= "clear:both;">
   <% @scenes.each do |scene| %>
-  <div style= "clear:both;">
+    <div class="admin-scene-item">
       <%= link_to(scene.title, admin_scene_path(scene)) %>
-      <span class="pull-right">
+      <span class="admin-scene-option">
         <%= link_to("编辑", edit_admin_scene_path(scene),class: "btn btn-primary") %>
         <%= link_to("删除", admin_scene_path(scene), class: "btn btn-danger") %>
       </span>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

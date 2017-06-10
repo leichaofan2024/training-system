@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
   <head>
     <title>TrainingSystem后台</title>
     <%= csrf_meta_tags %>
@@ -8,14 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="min-height:100%;">
-    <div class="container-fluid" style="margin-bottom:100px">
+  <body>
+    <div class="admin-frame" >
       <%= render "common/navbar" %>
 
       <%= render "common/flashes" %>
-      <%= link_to("后台首页", admin_scenes_path)%>
-      <%= yield %>
+      <div class="admin-yield-frame">
+        <%= link_to("后台首页", admin_scenes_path)%>
 
+        <%= yield %>
+      </div>
    </div>
      <%= render "common/footer" %>
   </body>

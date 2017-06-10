@@ -21,3 +21,75 @@
 @import "font-awesome";
 @import "select2";
 @import "select2-bootstrap";
+
+html{
+  height:100%;
+}
+body{
+  height:100%;
+  width:100%;
+}
+
+.admin-frame{
+  min-height:100%;
+  width:100%;
+  padding-bottom:100px;
+  margin-bottom:-100px;
+}
+.admin-yield-frame{
+  width:80%;
+  margin:0 auto;
+}
+.admin-scene-item{
+  height:30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.admin-scene-option{
+  float:right;
+  height:30px;
+  line-height: 30px;
+  clear:both;
+
+}
+.application-frame{
+  width:100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  // background-color: red;
+  padding-bottom:100px;
+  margin-bottom:-100px;
+}
+.footer-frame{
+  height:100px;
+  padding-top:30px;
+}
+
+.scene-index-frame{
+  width:70%;
+  min-height:100%;
+  height:auto !important;
+  height:100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // background-color: green;
+  margin:0 auto;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+}
+.scene-index{
+  height:100%;
+  background-color: #E5E8BA;
+  padding-top:20px;
+  padding-bottom: 20px;
+
+}
+.scene-index-item{
+  margin-left:20px;
+  clear:both;
+  clear:left;
+  margin-top:30px;
+  overflow: auto;
+}

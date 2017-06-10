@@ -1,0 +1,7 @@
+  <div class=" operation-manual">
+    <% @scene = Scene.find(params[:id]) %>
+
+    <h3 class="operation-manual-title" >场景“<%= @scene.title %>”的操作手册</h3>
+
+    <p class="operation-manual-description"><%= simple_format(@scene.description) %></p>
+  </div>

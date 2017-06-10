@@ -1,15 +1,14 @@
-<h3>所有培训场景</h3>
-<div class="clearfix">
+<div class= "scene-index-frame">
+  <h3>所有培训场景</h3>
 
-</div>
 
-<hr class="clearfix">
+  <hr class="clearfix">
 
-<div class="scene-index" style= "clear:both;">
-  <% @scenes.each do |scene| %>
-  <div style= "clear:both;">
-      <%= link_to(scene.title, scene_path(scene)) %>
-
+  <div class="scene-index">
+    <% @scenes.each do |scene| %>
+      <div class= "scene-index-item">
+          <%= link_to(scene.title, scene_path(scene)) %>
+      </div>
     <% end %>
   </div>
 </div>
