@@ -44,7 +44,7 @@ class ScenesController < ApplicationController
     @training.destroy
     redirect_to scene_path(@scene)
   end
-
-
-
+  def operation_manual
+    @scene = Scene.find(params[:id])
+  end  
 end
